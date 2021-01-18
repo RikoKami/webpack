@@ -1,3 +1,8 @@
-const sum = require("./app");
+import { App } from "./App";
+import React from "react";
+import ReactDOM from "react-dom";
 
-console.log(sum(1, 4));
+ReactDOM.render(
+  React.createElement(App),
+  document.querySelector('[data-js="app"]')
+);
