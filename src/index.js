@@ -1,1 +1,1 @@
-console.log("webpack está funcionando")
+console.log("webpack está funcionando!");
