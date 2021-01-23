@@ -8,4 +8,17 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/static/",
   },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        include: /src/,
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }
+    ]
+  }
 };
