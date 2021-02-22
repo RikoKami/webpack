@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/static/",
+    publicPath: "/",
   },
   devtool: "source-map",
   module: {
@@ -21,5 +22,14 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin ({
+      title: "Webpack Template",
+      filename: "index.html",
+      template: "./src/index.html",
+      favicon: "./src/assets/favicon/favicon.ico",
+      minify: true
+    })
+  ]
 };
